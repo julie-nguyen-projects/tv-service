@@ -11,10 +11,10 @@ public class Tv {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "tv_ip")
+
     private String ipAdress;
 
-    @Column(name = "tv_name")
+
     private String name;
 
     private Long compositionId;

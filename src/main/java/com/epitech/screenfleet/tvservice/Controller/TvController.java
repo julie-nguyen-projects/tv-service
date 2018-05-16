@@ -12,23 +12,23 @@ import java.util.Optional;
 public class TvController {
 
     @Autowired
-    private TvRepository repository;
+    private TvRepository repositoryTv;
 
     @GetMapping("/tv")
     public List<Tv> getAllTvs() {
-        return repository.findAll();
+        return repositoryTv.findAll();
     }
 
     @GetMapping("/tv/{id}")
     public Optional<Tv> getTvById(@PathVariable Long id) {
-        return repository.findById(id);
+        return repositoryTv.findById(id);
     }
 
     @DeleteMapping("/tv/{id}")
     public String deleteTv(@PathVariable Long id) {
         System.out.println("DELETE TELEVISION WITH ID : " + id);
         try {
-            repository.deleteById(id);
+            repositoryTv.deleteById(id);
         } catch (Exception e) {
             return "Error";
         }
@@ -43,8 +43,14 @@ public class TvController {
             System.out.println("A new television cannot have an ID");
             return null;
         }
-        Tv newTv = repository.save(television);
+        Tv newTv = repositoryTv.save(television);
         return newTv;
     }
 
+    @RequestMapping(value = "/tv/{id}", method = RequestMethod.PUT)
+    public Tv updateTv(@RequestBody Tv television) {
+        System.out.println("REST REQUEST to update Tv : " + television);
+        Tv updatedTv = repositoryTv.save(television);
+        return  updatedTv;
+    }
 }
