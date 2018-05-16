@@ -1,7 +1,12 @@
 package com.epitech.screenfleet.tvservice.Model.Associated;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+//@Entity
 public class Media {
 
+    //@Id
     private Long id;
     private String path;
     private String name;

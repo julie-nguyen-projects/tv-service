@@ -1,13 +1,19 @@
 package com.epitech.screenfleet.tvservice.Model.Associated;
 
-public class BasicModule extends AModule{
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
+
+//@Entity
+public class BaseModule extends AModule{
+
+    //@ManyToOne
     private Media content;
 
-    public BasicModule(){
+    public BaseModule(){
     }
 
-    public BasicModule(Long _id, Media _content){
+    public BaseModule(Long _id, Media _content){
         id = _id;
         content = _content;
     }

@@ -1,8 +1,16 @@
 package com.epitech.screenfleet.tvservice.Model.Associated;
 
+import javax.persistence.*;
+
+//@Entity
 public class Composition {
 
+    //@Id
     private Long id;
+
+    //@OneToOne(fetch = FetchType.LAZY,
+    //        cascade = CascadeType.ALL,
+    //        mappedBy = "composition")
     private AModule module;
 
     public Composition(){

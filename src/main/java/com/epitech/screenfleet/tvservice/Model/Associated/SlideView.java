@@ -1,7 +1,11 @@
 package com.epitech.screenfleet.tvservice.Model.Associated;
 
+import org.springframework.data.repository.cdi.Eager;
+
+import javax.persistence.Entity;
 import java.util.ArrayList;
 
+//@Entity
 public class SlideView extends AModule{
 
     private int nbSlide;
