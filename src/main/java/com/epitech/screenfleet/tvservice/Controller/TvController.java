@@ -14,16 +14,19 @@ public class TvController {
     @Autowired
     private TvRepository repositoryTv;
 
+    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("/tv")
     public List<Tv> getAllTvs() {
         return repositoryTv.findAll();
     }
 
+    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("/tv/{id}")
     public Optional<Tv> getTvById(@PathVariable Long id) {
         return repositoryTv.findById(id);
     }
 
+    @CrossOrigin(origins = "http://localhost:8080")
     @DeleteMapping("/tv/{id}")
     public String deleteTv(@PathVariable Long id) {
         System.out.println("DELETE TELEVISION WITH ID : " + id);
@@ -35,6 +38,7 @@ public class TvController {
         return "Done";
     }
 
+    @CrossOrigin(origins = "http://localhost:8080")
     @PostMapping("/tv")
     public Tv createTv(@RequestBody Tv television) {
         System.out.println("REST REQUEST to save Tv : " + television);
@@ -47,6 +51,7 @@ public class TvController {
         return newTv;
     }
 
+    @CrossOrigin(origins = "http://localhost:8080")
     @RequestMapping(value = "/tv/{id}", method = RequestMethod.PUT)
     public Tv updateTv(@RequestBody Tv television) {
         System.out.println("REST REQUEST to update Tv : " + television);
